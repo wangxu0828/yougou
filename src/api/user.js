@@ -6,8 +6,8 @@
  * @Description: In User Settings Edit
  * @FilePath: \yougou\src\api\api.js
  */
-import request from "../utils/request";
+import request from '../utils/request'
 
 export function getSwiperList() {
-  return request.get("/home/swiperdata")
+  return request.get('/home/swiperdata')
 }

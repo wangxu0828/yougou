@@ -7,7 +7,7 @@
  * @FilePath: \yougou\src\utils\request.js
  */
 import FlyIO from 'flyio/dist/npm/wx'
-
+import { showMessage } from './message'
 // 创建新的FlyIO实例
 const request = new FlyIO()
 
@@ -18,37 +18,36 @@ request.config.timeout = 30000
 request.config.baseURL = 'https://www.uinav.com/api/public/v1'
 
 // 设置请求拦截器
-request.interceptors.request.use((config) => {
-  uni.showLoading({
-    title: "加载中",
-    mask: true
-  })
-  return config
-}, (err) => {
-  return Promise.reject(err)
-})
+request.interceptors.request.use(
+  (config) => {
+    uni.showLoading({
+      title: '加载中',
+      mask: true,
+    })
+    return config
+  },
+  (err) => {
+    return Promise.reject(err)
+  },
+)
 
 // 设置响应拦截器
-request.interceptors.response.use((response) => {
-  const {
-    meta,
-    message
-  } = response.data
-  if (meta.status !== 200) {
-    uni.showToast({
-      title: "请求数据失败",
-      duration: 1500,
-      icon: "none"
-    })
-    return
-  }
-  uni.hideLoading()
-  // 去一层壳
-  return response.data
-}, (err) => {
-  uni.hideLoading()
-  return Promise.reject(err)
-})
+request.interceptors.response.use(
+  (response) => {
+    const { meta, message } = response.data
+    if (meta.status !== 200) {
+      showMessage()
+      return
+    }
+    uni.hideLoading()
+    // 去一层壳
+    return response.data
+  },
+  (err) => {
+    uni.hideLoading()
+    return Promise.reject(err)
+  },
+)
 
 // 导出
 export default request

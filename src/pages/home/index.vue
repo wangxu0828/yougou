@@ -18,35 +18,42 @@
       :circular="true"
     >
       <swiper-item v-for="(item, index) in swiperList" :key="index">
-        <navigator
-          class="swiper-content"
-          url="`pages_sub1/product-detail/index?pid=${item.goods_id}`"
-        >
+        <view class="swiper-content" @click="click(item)">
           <image :src="item.image_src"></image>
-        </navigator>
+        </view>
       </swiper-item>
     </swiper>
   </view>
 </template>
 
 <script>
-import { getSwiperList } from "../../api/user";
+import { getSwiperList } from '../../api/user'
 export default {
   data() {
     return {
       swiperList: [],
-    };
+    }
   },
   created() {
-    this.getSwiperList();
+    this.getSwiperList()
+    console.log(312312)
   },
   methods: {
     async getSwiperList() {
-      const { message } = await getSwiperList();
-      this.swiperList = message;
+      const { message } = await getSwiperList()
+      this.swiperList = message
+    },
+    click(item) {
+      console.log(item)
+      uni.navigateTo({
+        url: '/pages_sub1/product-detail/product-detail?pid=' + item.goods_id,
+        fail(err) {
+          console.log(err)
+        },
+      })
     },
   },
-};
+}
 </script>
 
 <style lang="scss">
