@@ -1,27 +1,22 @@
 <!--
  * @Author: your name
- * @Date: 2021-10-08 15:00:47
- * @LastEditTime: 2021-10-08 16:30:15
+ * @Date: 2021-10-08 16:54:51
+ * @LastEditTime: 2021-10-08 16:54:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \yougou\src\pages\index\index.vue
 -->
 <template>
-  <view>
-    <uni-icons type="forward" size="30"></uni-icons>
-  </view>
+  <div class="main"></div>
 </template>
 
-<script>
+<script type="text/javascript">
 export default {
+  name: "app",
   data() {
-    return {
-      title: "Hello",
-    };
+    return {};
   },
-  onLoad() {},
-  methods: {},
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="less" scoped></style>
