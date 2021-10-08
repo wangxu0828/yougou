@@ -1,49 +1,27 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-08 15:00:47
+ * @LastEditTime: 2021-10-08 16:30:15
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \yougou\src\pages\index\index.vue
+-->
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
+  <view>
+    <uni-icons type="forward" size="30"></uni-icons>
+  </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
-		}
-	}
+export default {
+  data() {
+    return {
+      title: "Hello",
+    };
+  },
+  onLoad() {},
+  methods: {},
+};
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
-</style>
+<style lang="scss"></style>
