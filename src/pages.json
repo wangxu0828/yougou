@@ -25,6 +25,25 @@
       }
     }
   ],
+  "subPackages": [
+    {
+      "root": "pages_sub1",
+      "pages": [
+        {
+          "path": "product-list/index",
+          "style": {
+            "navigationBarTitleText": "商品列表"
+          }
+        },
+        {
+          "path": "product-detail/index",
+          "style": {
+            "navigationBarTitleText": "商品详情"
+          }
+        }
+      ]
+    }
+  ],
   "globalStyle": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "优购",
