@@ -7,13 +7,16 @@
  * @FilePath: \yougou\src\pages\category\index.vue
 -->
 <template>
-  <view>
-    分类
-  </view>
+  <view></view>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {}
+  },
+  methods: {},
+}
 </script>
 
 <style></style>
