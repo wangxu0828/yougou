@@ -38,7 +38,14 @@
         {
           "path": "product-list/product-list",
           "style": {
-            "navigationBarTitleText": "商品列表"
+            "navigationBarTitleText": "商品列表",
+            "onReachBottomDistance": 150
+          }
+        },
+        {
+          "path": "search/search",
+          "style": {
+            "navigationBarTitleText": "搜索页面"
           }
         }
       ]
